@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* CSS (Tailwind) */
+@layer utilities {
+  .nike-hover:hover {
+    filter: drop-shadow(0 0 1.5em black);
+    transition: filter 1s ease;
+  }
+  .adidas-hover:hover {
+    filter: drop-shadow(0 0 3em black);
+    transition: filter 1s ease;
+  }
+
+  .black_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 14, 14, 0.306);
+    z-index: 1;
+  }
+  .black_overlay_top2bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.898), rgba(0, 0, 0, 0));
+    z-index: 1; /* Ensure it's behind content */
+    pointer-events: none; /* Allow clicks to pass through */
+  } 
+  
+}
