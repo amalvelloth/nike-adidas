@@ -36,7 +36,7 @@ function Hero() {
       <div className="relative h-screen overflow-hidden">
         <LoadingBar
           color="white"
-          style={{ height: "3px" }}
+          style={{ height: "3px",borderRadius: "1rem" }}
           progress={progress}
           onLoaderFinished={() => setProgress(0)}
         />
@@ -79,11 +79,16 @@ function Hero() {
             />
             {showNikeButton && (
               <button
-                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-                onClick={() => setProgress(100)}
-              >
-                Shop NIKE
-              </button>
+              className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+              onClick={() => {
+                setProgress(10); 
+                setTimeout(() => {
+                  setProgress(100); 
+                }, 100);
+              }}
+            >
+              Shop NIKE
+            </button>
             )}
           </div>
           <div className="h-full w-0.5 bg-black"></div>
@@ -115,11 +120,16 @@ function Hero() {
             />
             {showAdidasButton && (
               <button
-                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-                onClick={() => setProgress(100)}
-              >
-                Shop ADIDAS
-              </button>
+              className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+              onClick={() => {
+                setProgress(10);
+                setTimeout(() => {
+                  setProgress(100);
+                }, 100);
+              }}
+            >
+              Shop ADIDAS
+            </button>
             )}
           </div>
         </div>
