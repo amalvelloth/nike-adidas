@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import nikeBGimage from "../assets/nike.jpg";
-import adidasBGimage from "../assets/adidas.jpg";
 import nike from "../assets/nike.svg";
 import adidas from "../assets/adidas.svg";
+import nikeBgImage from "../assets/nike.jpg";
+import adidasBgImage from "../assets/adidas.jpg";
 import LoadingBar from "react-top-loading-bar";
 
 function Hero() {
@@ -12,7 +12,7 @@ function Hero() {
   const [isAdidasExpanded, setIsAdidasExpanded] = useState(false);
   const [showNikeButton, setShowNikeButton] = useState(false);
   const [showAdidasButton, setShowAdidasButton] = useState(false);
-  const [isBackgroundBlurred, setIsBackgroundBlurred] = useState(false);
+  const [isBackgroundBlurred, setIsBackgroundBlurred] = useState(false); // New state to control background blur
   const [progress, setProgress] = useState(0);
 
   const handleNikeClick = () => {
@@ -23,7 +23,7 @@ function Hero() {
     setIsBackgroundBlurred(true); // Toggle background blur
   };
 
-  const handleAdidasClick = () => { 
+  const handleAdidasClick = () => {
     setIsAdidasExpanded(true);
     setIsNikeExpanded(false);
     setShowAdidasButton(true);
@@ -36,7 +36,7 @@ function Hero() {
       <div className="relative h-screen overflow-hidden">
         <LoadingBar
           color="white"
-          style={{ height: "3px",borderRadius: "1rem" }}
+          style={{ height: "3px" }}
           progress={progress}
           onLoaderFinished={() => setProgress(0)}
         />
@@ -47,7 +47,7 @@ function Hero() {
             isHovered ? "blur-sm" : ""
           }`}
         >
-          CHOOSE YOUR ULTIMATE FOOTBALL BOOTS
+          CHOOSE YOUR ULTIMATE FOOTBALL BRAND
         </h1>
 
         <div className="flex w-full h-full">
@@ -64,7 +64,7 @@ function Hero() {
                 isBackgroundBlurred ? "blur-md" : ""
               }`}
               style={{
-                backgroundImage: `url(${nikeBGimage})`,
+                backgroundImage: `url(${nikeBgImage})`,
                 filter: isHovered ? "blur(3px)" : "none",
                 transform: isHovered ? "scale(1.1)" : "scale(1)",
               }}
@@ -79,23 +79,18 @@ function Hero() {
             />
             {showNikeButton && (
               <button
-              className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-              onClick={() => {
-                setProgress(10); 
-                setTimeout(() => {
-                  setProgress(100); 
-                }, 100);
-              }}
-            >
-              Shop NIKE
-            </button>
+                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+                onClick={() => setProgress(100)}
+              >
+                Shop NIKE
+              </button>
             )}
           </div>
           <div className="h-full w-0.5 bg-black"></div>
           <div
             className={`w-${
               isAdidasExpanded ? "full" : "1/2"
-            } flex justify-center items-center relative overflow-hidden transition-width duration-500`}
+            } flex justify-center items-center relative overflow-hidden transition duration-500`}
             onClick={handleAdidasClick}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -105,7 +100,7 @@ function Hero() {
                 isBackgroundBlurred ? "blur-md" : "" // Apply background blur conditionally
               }`}
               style={{
-                backgroundImage: `url(${adidasBGimage})`,
+                backgroundImage: `url(${adidasBgImage})`,
                 filter: isHovered ? "blur(3px)" : "none",
                 transform: isHovered ? "scale(1.1)" : "scale(1)",
               }}
@@ -120,16 +115,11 @@ function Hero() {
             />
             {showAdidasButton && (
               <button
-              className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-              onClick={() => {
-                setProgress(10);
-                setTimeout(() => {
-                  setProgress(100);
-                }, 100);
-              }}
-            >
-              Shop ADIDAS
-            </button>
+                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+                onClick={() => setProgress(100)}
+              >
+                Shop ADIDAS
+              </button>
             )}
           </div>
         </div>
@@ -139,3 +129,4 @@ function Hero() {
 }
 
 export default Hero;
+
