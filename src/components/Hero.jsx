@@ -7,29 +7,9 @@ import adidasBgImage from "../assets/adidas.jpg";
 import LoadingBar from "react-top-loading-bar";
 
 function Hero() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isNikeExpanded, setIsNikeExpanded] = useState(false);
-  const [isAdidasExpanded, setIsAdidasExpanded] = useState(false);
-  const [showNikeButton, setShowNikeButton] = useState(false);
-  const [showAdidasButton, setShowAdidasButton] = useState(false);
-  const [isBackgroundBlurred, setIsBackgroundBlurred] = useState(false); // New state to control background blur
+
   const [progress, setProgress] = useState(0);
 
-  const handleNikeClick = () => {
-    setIsNikeExpanded(true);
-    setIsAdidasExpanded(false);
-    setShowNikeButton(true);
-    setShowAdidasButton(false);
-    setIsBackgroundBlurred(true); // Toggle background blur
-  };
-
-  const handleAdidasClick = () => {
-    setIsAdidasExpanded(true);
-    setIsNikeExpanded(false);
-    setShowAdidasButton(true);
-    setShowNikeButton(false);
-    setIsBackgroundBlurred(true); // Toggle background blur
-  };
 
   return (
     <>
@@ -40,90 +20,29 @@ function Hero() {
           progress={progress}
           onLoaderFinished={() => setProgress(0)}
         />
-        <div className="black_overlay"></div>
+        {/*<div className="black_overlay"></div>*/}
         <div className="black_overlay_top2bottom"></div>
         <h1
-          className={`absolute top-0 left-0 right-0 text-2xl font-bold font-Monsterrat text-center text-white z-10 mt-8 transition duration-1000 ease-in-out ${
-            isHovered ? "blur-sm" : ""
-          }`}
-        >
+          className= "absolute top-0 left-0 right-0 text-2xl font-bold font-Monsterrat text-center text-white z-10 mt-8">
           CHOOSE YOUR ULTIMATE FOOTBALL BRAND
         </h1>
-
-        <div className="flex w-full h-full">
-          <div
-            className={`w-${
-              isNikeExpanded ? "full" : "1/2"
-            } flex justify-center items-center relative overflow-hidden transition-width duration-500`}
-            onClick={handleNikeClick}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div
-              className={`bg-cover bg-center w-full h-full transition duration-1000 ease-in-out ${
-                isBackgroundBlurred ? "blur-md" : ""
-              }`}
-              style={{
-                backgroundImage: `url(${nikeBgImage})`,
-                filter: isHovered ? "blur(3px)" : "none",
-                transform: isHovered ? "scale(1.1)" : "scale(1)",
-              }}
-            ></div>
+        <div className="w-full h-full flex">
+          <div className="w-1/2 h-full flex justify-center items-center">
             <img
-              src={nike}
-              className={`nike_logo size-40 cursor-pointer absolute bg-transparent transition duration-1000 ease-in-out ${
-                isHovered ? "hover:nike-hover" : ""
-              }`}
-              alt=""
-              style={{ zIndex: 1 }}
+              src={nikeBgImage}
+              alt="Nike background image"
+              className="w-full h-full object-cover"
             />
-            {showNikeButton && (
-              <button
-                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-                onClick={() => setProgress(100)}
-              >
-                Shop NIKE
-              </button>
-            )}
+            <img src={nike} className="absolute size-40 z-20" alt="nike logo" />
           </div>
-          <div className="h-full w-0.5 bg-black"></div>
-          <div
-            className={`w-${
-              isAdidasExpanded ? "full" : "1/2"
-            }bg-cover bg-center w-full h-full flex justify-center items-center relative overflow-hidden transition duration-500`}
-            onClick={handleAdidasClick}
-            style={{
-              backgroundImage: `url(${adidasBgImage})`
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <div
-              className={`bg-cover bg-center w-full h-full transition duration-1000 ease-in-out ${
-                isBackgroundBlurred ? "blur-md" : "" // Apply background blur conditionally
-              }`}
-              style={{
-                
-                filter: isHovered ? "blur(3px)" : "none",
-                transform: isHovered ? "scale(1.1)" : "scale(1)",
-              }}
-            ></div>
+          <div className="h-full bg-black w-0.5"></div>
+          <div className="w-1/2 h-full flex justify-center items-center">
             <img
-              src={adidas}
-              className={`adidas_logo size-36 cursor-pointer absolute bg-transparent transition duration-1000 ease-in-out ${
-                isHovered ? "hover:adidas-hover" : ""
-              }`}
-              alt=""
-              style={{ zIndex: 1 }}
+              src={adidasBgImage}
+              alt="Adidas background image"
+              className="w-full h-full object-cover"
             />
-            {showAdidasButton && (
-              <button
-                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-                onClick={() => setProgress(100)}
-              >
-                Shop ADIDAS
-              </button>
-            )}
+            <img src={adidas} className="absolute size-36 z-20" alt="adidas logo" />
           </div>
         </div>
       </div>
@@ -132,70 +51,3 @@ function Hero() {
 }
 
 export default Hero;
-
-{
-  /*
-import React from "react";
-import "./Hero.css";
-import { useState } from "react";
-import nike from "../assets/nike.svg";
-import adidas from "../assets/adidas.svg";
-import nikeBgImage from "../assets/nike.jpg";
-import adidasBgImage from "../assets/adidas.jpg";
-
-function Hero() {
-  const [isHovered, setIsHovered] = useState(false);
-  return (
-    <div className="flex overflow-hidden">
-      <h1 className="absolute top-0 left-0 right-0 text-4xl font-bold text-center bg-transparent text-white z-10 mt-8">
-        CHOOSE THE ULTIMATE FOOTBALL BRAND
-      </h1>
-
-      <div
-        className={`w-1/2 h-screen flex items-center justify-center bg-cover bg-center  transition duration-1000 ease-in-out ${
-          isHovered ? "blur-md" : ""}`}
-        style={{
-          backgroundImage: `url(${nikeBgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <img
-          src={nike}
-          className={`adidas_logo size-40 cursor-pointer absolute bg-transparent transition duration-1000 ease-in-out ${
-            isHovered ? "hover:adidas-hover" : ""
-          }`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          alt=""
-          style={{ zIndex: 1}}
-        />
-      </div>
-
-      <div
-        className={`w-1/2 h-screen flex justify-center items-center bg-cover bg-center  transition duration-1000 ease-in-out ${
-          isHovered ? "blur-md" : "" }`}
-        style={{
-          backgroundImage: `url(${adidasBgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <img
-          src={adidas}
-          className={`adidas_logo size-40 cursor-pointer absolute bg-transparent transition duration-1000 ease-in-out ${
-            isHovered ? "hover:adidas-hover" : ""
-          }`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          alt=""
-          style={{ zIndex: 1 }}
-        />
-      </div>
-    </div>
-  );
-}
-
-export default Hero;
-*/
-}
