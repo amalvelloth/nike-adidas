@@ -90,8 +90,11 @@ function Hero() {
           <div
             className={`w-${
               isAdidasExpanded ? "full" : "1/2"
-            } flex justify-center items-center relative overflow-hidden transition duration-500`}
+            }bg-cover bg-center w-full h-full flex justify-center items-center relative overflow-hidden transition duration-500`}
             onClick={handleAdidasClick}
+            style={{
+              backgroundImage: `url(${adidasBgImage})`
+            }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -100,7 +103,7 @@ function Hero() {
                 isBackgroundBlurred ? "blur-md" : "" // Apply background blur conditionally
               }`}
               style={{
-                backgroundImage: `url(${adidasBgImage})`,
+                
                 filter: isHovered ? "blur(3px)" : "none",
                 transform: isHovered ? "scale(1.1)" : "scale(1)",
               }}
@@ -130,3 +133,69 @@ function Hero() {
 
 export default Hero;
 
+{
+  /*
+import React from "react";
+import "./Hero.css";
+import { useState } from "react";
+import nike from "../assets/nike.svg";
+import adidas from "../assets/adidas.svg";
+import nikeBgImage from "../assets/nike.jpg";
+import adidasBgImage from "../assets/adidas.jpg";
+
+function Hero() {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <div className="flex overflow-hidden">
+      <h1 className="absolute top-0 left-0 right-0 text-4xl font-bold text-center bg-transparent text-white z-10 mt-8">
+        CHOOSE THE ULTIMATE FOOTBALL BRAND
+      </h1>
+
+      <div
+        className={`w-1/2 h-screen flex items-center justify-center bg-cover bg-center  transition duration-1000 ease-in-out ${
+          isHovered ? "blur-md" : ""}`}
+        style={{
+          backgroundImage: `url(${nikeBgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <img
+          src={nike}
+          className={`adidas_logo size-40 cursor-pointer absolute bg-transparent transition duration-1000 ease-in-out ${
+            isHovered ? "hover:adidas-hover" : ""
+          }`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          alt=""
+          style={{ zIndex: 1}}
+        />
+      </div>
+
+      <div
+        className={`w-1/2 h-screen flex justify-center items-center bg-cover bg-center  transition duration-1000 ease-in-out ${
+          isHovered ? "blur-md" : "" }`}
+        style={{
+          backgroundImage: `url(${adidasBgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <img
+          src={adidas}
+          className={`adidas_logo size-40 cursor-pointer absolute bg-transparent transition duration-1000 ease-in-out ${
+            isHovered ? "hover:adidas-hover" : ""
+          }`}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          alt=""
+          style={{ zIndex: 1 }}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Hero;
+*/
+}
