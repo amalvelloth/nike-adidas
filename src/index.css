@@ -15,11 +15,11 @@
 @layer utilities {
   .nike-hover:hover {
     filter: drop-shadow(0 0 1.5em black);
-    transition: filter 1s ease;
+    transition: filter 0.5s ease-in-out;
   }
   .adidas-hover:hover {
     filter: drop-shadow(0 0 3em black);
-    transition: filter 1s ease;
+    transition: filter 0.5s ease-in-out;
   }
 
   .black_overlay {
