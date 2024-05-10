@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'Marcellus': ["Marcellus"],
         'Monsterrat': ["Montserrat"],
       },
 
