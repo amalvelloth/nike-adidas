@@ -39,7 +39,7 @@ function Hero() {
         <div className="black_overlay"></div>
         <div className="black_overlay_top2bottom"></div>
 
-        <div className={`absolute  w-full sm:top-8 md:top-11 lg:top-11 z-20 transition duration-1000 ease-in-out ${
+        <div className={`absolute  w-full sm:top-8 md:top-11 lg:top-11 top-11 z-20 transition duration-500 ease-in-out ${
             isHovered ? "blur-sm" : ""
           }`}>
           <h1 className="flex justify-center text-center text-2xl text-white font-bold font-Marcellus">CHOOSE YOUR ULTIMATE FOOTBALL BRAND</h1>
@@ -48,7 +48,7 @@ function Hero() {
 
         <div className="w-full h-full flex">
           <div
-            className={`w-1/2 h-full flex justify-center items-center transition-all duration-1000 ease-in-out ${
+            className={`w-1/2 h-full flex justify-center items-center transition-all duration-500 ease-in-out ${
               expandNike ? "w-full transition-all duration-500 ease-in-out" : ""
             }`}
             onMouseEnter={() => setIsHovered(true)}
@@ -58,7 +58,7 @@ function Hero() {
               <img
                 src={nikeBgImage}
                 alt="Nike background image"
-                className={`w-full h-full object-cover transition duration-1000 ease-in-out ${
+                className={`w-full h-full object-cover transition duration-500 ease-in-out ${
                   isHovered ? "blur-md" : ""
                 }`}
                 style={{
@@ -76,7 +76,7 @@ function Hero() {
               </div>
               {showNikeButton && (
                 <button
-                  className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+                  className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
                   onClick={() => setProgress(100)}
                 >
                   Shop NIKE
@@ -88,7 +88,7 @@ function Hero() {
           <div className="h-full bg-black w-0.5"></div>
 
           <div
-            className={`w-1/2 h-full flex justify-center items-center transition-all duration-1000 ease-in-out ${
+            className={`w-1/2 h-full flex justify-center items-center transition-all duration-500 ease-in-out ${
               expandAdidas
                 ? "w-full transition-all duration-500 ease-in-out"
                 : ""
@@ -101,7 +101,7 @@ function Hero() {
               <img
                 src={adidasBgImage}
                 alt="Adidas background image"
-                className={`w-full h-full object-cover transition duration-1000 ease-in-out ${
+                className={`w-full h-full object-cover transition duration-500 ease-in-out ${
                   isHovered ? "blur-md" : ""
                 }`}
                 style={{
@@ -119,7 +119,7 @@ function Hero() {
               </div>
               {showAdidasButton && (
                 <button
-                  className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+                  className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
                   onClick={() => setProgress(100)}
                 >
                   Shop ADIDAS
