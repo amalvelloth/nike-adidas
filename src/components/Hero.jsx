@@ -4,6 +4,8 @@ import adidas from "../assets/adidas.svg";
 import nikeBgImage from "../assets/nike.jpg";
 import adidasBgImage from "../assets/adidas.jpg";
 import LoadingBar from "react-top-loading-bar";
+import { Link } from "react-router-dom";
+
 
 function Hero() {
   const [isHovered, setIsHovered] = useState(false);
@@ -43,7 +45,7 @@ function Hero() {
             isHovered ? "blur-sm" : ""
           }`}>
           <h1 className="flex justify-center text-center text-2xl text-white font-bold font-Marcellus">CHOOSE YOUR ULTIMATE FOOTBALL BRAND</h1>
-          <h2 className="flex justify-center text-center px-10 sm:mt-2 text-md text-white font-Marcellus leading-5">Explore the latest collection of best football boots.</h2>
+          <h2 className="flex justify-center text-center px-10 sm:mt-2 text-md text-white font-Marcellus leading-5">Explore the extraordinary collection of Football boots.</h2>
         </div>
 
         <div className="w-full h-full flex">
@@ -78,7 +80,7 @@ function Hero() {
                 <button
                   className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
                   onClick={() => setProgress(100)}
-                >
+                  >
                   Shop NIKE
                 </button>
               )}
