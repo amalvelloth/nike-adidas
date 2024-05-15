@@ -13,7 +13,7 @@ function Hero() {
   const [showNikeButton, setShowNikeButton] = useState(false);
   const [showAdidasButton, setShowAdidasButton] = useState(false);
   const [progress, setProgress] = useState(0);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleNikeClick = () => {
     setExpandNike(true);
@@ -36,7 +36,10 @@ function Hero() {
           color="white"
           style={{ height: "3px" }}
           progress={progress}
-          onLoaderFinished={() => setProgress(0)}
+          onLoaderFinished={() => {
+            setProgress(0);
+            navigate(expandNike ? 'nike-home' : 'adidas-home');
+          }}
         />
         <div className="black_overlay"></div>
         <div className="black_overlay_top2bottom"></div>
@@ -81,7 +84,6 @@ function Hero() {
                 className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
                 onClick={() => {
                   setProgress(100);
-                  navigate('nike-home');
                 }}
               >
                 Shop NIKE
@@ -127,7 +129,6 @@ function Hero() {
                 className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
                 onClick={() => {
                   setProgress(100);
-                  navigate('adidas-home');
                 }}
               >
                 Shop ADIDAS
