@@ -9,7 +9,7 @@ function adidasHOME() {
           <div className="flex justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <h2 className="text-black font-semibold">Logo</h2>
+              <h2 className="text-black font-bold">Adidas</h2>
             </div>
 
             {/* Mobile Menu Button */}
