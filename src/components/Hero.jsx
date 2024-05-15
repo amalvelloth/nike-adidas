@@ -4,8 +4,7 @@ import adidas from "../assets/adidas.svg";
 import nikeBgImage from "../assets/nike.jpg";
 import adidasBgImage from "../assets/adidas.jpg";
 import LoadingBar from "react-top-loading-bar";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,6 +13,7 @@ function Hero() {
   const [showNikeButton, setShowNikeButton] = useState(false);
   const [showAdidasButton, setShowAdidasButton] = useState(false);
   const [progress, setProgress] = useState(0);
+  const navigate = useNavigate()
 
   const handleNikeClick = () => {
     setExpandNike(true);
@@ -78,11 +78,14 @@ function Hero() {
               </div>
               {showNikeButton && (
                 <button
-                  className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-                  onClick={() => setProgress(100)}
-                  >
-                  Shop NIKE
-                </button>
+                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+                onClick={() => {
+                  setProgress(100);
+                  navigate('nike-home');
+                }}
+              >
+                Shop NIKE
+              </button>
               )}
             </div>
           </div>
@@ -121,11 +124,14 @@ function Hero() {
               </div>
               {showAdidasButton && (
                 <button
-                  className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
-                  onClick={() => setProgress(100)}
-                >
-                  Shop ADIDAS
-                </button>
+                className="absolute z-10 bottom-1/4 bg-white bg-opacity-25 hover:bg-opacity-50 font-Monsterrat transition duration-300 text-white font-semibold py-2 px-4 rounded-md border shadow-md backdrop-blur-lg"
+                onClick={() => {
+                  setProgress(100);
+                  navigate('adidas-home');
+                }}
+              >
+                Shop ADIDAS
+              </button>
               )}
             </div>
           </div>

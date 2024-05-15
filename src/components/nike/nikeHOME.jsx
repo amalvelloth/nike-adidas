@@ -1,9 +1,11 @@
 import React from 'react'
 
-function Home() {
+function nikeHOME() {
   return (
-    <div>Home</div>
+    <div className='flex h-screen justify-center items-center bg-black'>
+      <h1 className='text-white'>NIKE HOME PAGE</h1>
+    </div>
   )
 }
 
-export default Home
+export default nikeHOME
