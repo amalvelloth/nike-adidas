@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import NikeBackgroundImage from '../nike/nike asssets/rv4.jpg'
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +14,6 @@ function NikeHOME() {
   return (
     <>
       {/* Navbar */}
-      <div style={{ backgroundImage: `url(${NikeBackgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
       {/* Navbar */}
       <nav className="bg-white w-full">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
@@ -62,7 +60,6 @@ function NikeHOME() {
       <div className='flex h-screen justify-center items-center bg-black'>
         <h1 className='text-white'>NIKE HOME PAGE</h1>
       </div>
-    </div>
     </>
   );
 }
