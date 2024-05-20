@@ -16,10 +16,14 @@ function NikeHOME() {
       {/* Navbar */}
       {/* Navbar */}
       <nav className="bg-white w-full fixed shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-3">
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <div>
-            <h2 className="text-black font-semibold text-xl">Nike</h2>
+            <a href="">
+              <svg aria-hidden="true" class="swoosh-svg" focusable="false" viewBox="0 0 24 24" role="img" width="44px" height="44px" fill="none">
+                <path fill="currentColor" fill-rule="evenodd" d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" clip-rule="evenodd" />
+              </svg>
+            </a>
           </div>
 
           {/* Desktop Menu */}
@@ -105,7 +109,11 @@ function NikeHOME() {
               </a>
             </div>
             <div className="px-4 py-6">
-              <h1 className="text-xl text-gray-500">Become a Nike Member for the best products, inspiration and stories in sport. <span className="text-black font-medium">Learn more</span> </h1>
+              <h1 className="text-xl text-gray-500">
+                Become a Nike Member for the best products, inspiration and
+                stories in sport.{" "}
+                <span className="text-black font-medium">Learn more</span>{" "}
+              </h1>
             </div>
           </div>
         </div>
