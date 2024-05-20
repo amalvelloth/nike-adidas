@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
+import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,27 +45,33 @@ function NikeHOME() {
           </div>
 
           {/* Mobile Menu Button - only shown on small screens */}
-          <div className="grid grid-cols-2 md:items-center">
-  <h1 className="text-black justify-self-start"><ShoppingBagTwoToneIcon /></h1>
-  <button
-    onClick={toggleMobileMenu}
-    className="text-gray-400 focus:outline-none justify-self-end"
-  >
-    <svg
-      className="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M4 6h16M4 12h16m-7 6h7"
-      />
-    </svg>
-  </button>
-</div>
+          <div className="grid grid-cols-3 gap-2 md:items-center">
+            <h1 className="text-gray-400 hover:text-black justify-self-start">
+              <FavoriteTwoToneIcon />
+            </h1>
+            <h1 className="text-gray-400 hover:text-black justify-self-start">
+              <ShoppingBagTwoToneIcon />
+            </h1>
+            <button
+              onClick={toggleMobileMenu}
+              className="text-gray-400 focus:outline-none justify-self-end hidden md:block"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+
 
 
 
