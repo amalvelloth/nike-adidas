@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,14 +21,14 @@ function NikeHOME() {
           {/* Logo */}
           <div>
             <a href="">
-              <svg aria-hidden="true" class="swoosh-svg" focusable="false" viewBox="0 0 24 24" role="img" width="44px" height="44px" fill="none">
+              <svg aria-hidden="true" class="swoosh-svg" focusable="false" viewBox="3 8 18 7" role="img" width="44px" height="44px" fill="none">
                 <path fill="currentColor" fill-rule="evenodd" d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" clip-rule="evenodd" />
               </svg>
             </a>
           </div>
 
           {/* Desktop Menu */}
-          <div className="md:hidden space-x-6">
+          <div className="md:hidden flex flex-grow justify-center md:justify-end space-x-6">
             <a href="#" className="text-gray-900 hover:text-gray-800">
               Home
             </a>
@@ -43,26 +44,30 @@ function NikeHOME() {
           </div>
 
           {/* Mobile Menu Button - only shown on small screens */}
-          <div className="hidden md:flex">
-            <button
-              onClick={toggleMobileMenu}
-              className="text-gray-400 focus:outline-none"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </button>
-          </div>
+          <div className="grid grid-cols-2 md:items-center">
+  <h1 className="text-black justify-self-start"><ShoppingBagTwoToneIcon /></h1>
+  <button
+    onClick={toggleMobileMenu}
+    className="text-gray-400 focus:outline-none justify-self-end"
+  >
+    <svg
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M4 6h16M4 12h16m-7 6h7"
+      />
+    </svg>
+  </button>
+</div>
+
+
+
         </div>
       </nav>
 
