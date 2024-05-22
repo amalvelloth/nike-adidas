@@ -17,7 +17,7 @@ function NikeHOME() {
     <>
       {/* Navbar */}
       {/* Navbar */}
-      <nav className="bg-white w-full fixed shadow-lg">
+      <nav className="bg-white w-full fixed shadow-lg z-10">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <div>
@@ -132,9 +132,16 @@ function NikeHOME() {
       )}
 
       {/* Content */}
-      <div className="flex h-screen justify-center items-center bg-slate-50">
-        <h1 className="text-black">NIKE HOME PAGE</h1>
-      </div>
+      <section>
+        <div className="bg-gray-50 overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+          <div className="relative w-full max-w-lg">
+            <div className="absolute top-0 sm:-top-12 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob"></div>
+            <div className="absolute top-0 sm:top-4 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-4000"></div>
+          </div>
+          <h1>NIKE HOME PAGE</h1>
+        </div>
+      </section>
     </>
   );
 }

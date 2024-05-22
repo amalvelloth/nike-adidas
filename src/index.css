@@ -47,6 +47,13 @@
     z-index: 1; /* Ensure it's behind content */
     pointer-events: none; /* Allow clicks to pass through */
   }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
 }
 
 

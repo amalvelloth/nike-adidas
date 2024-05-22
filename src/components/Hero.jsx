@@ -33,7 +33,7 @@ function Hero() {
     <>
       <div className="relative h-screen overflow-hidden bg-black">
         <LoadingBar
-          color="linear-gradient(to right, #000000, #FFD700)" // Gradient from gold to black
+          color="linear-gradient(to right, #000000 0%, #FFD700 93%, yellow 100%)"// Gradient from gold to black
           style={{ height: "4px", 
             borderTopRightRadius: "10px",
             borderBottomRightRadius: "10px"
