@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 
+
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -133,13 +134,18 @@ function NikeHOME() {
 
       {/* Content */}
       <section>
-        <div className="bg-gray-50 overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+        <div className="bg-white overflow-hidden min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
           <div className="relative w-full max-w-lg">
             <div className="absolute top-0 sm:-top-12 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob"></div>
             <div className="absolute top-0 sm:top-4 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-2000"></div>
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-50 animate-blob animation-delay-4000"></div>
           </div>
-          <h1>NIKE HOME PAGE</h1>
+        <div className="absolute bg-[url('/images/nike-mds-speed-8.jpg')] bg-center bg-cover size-5/6 rounded-xl"></div>
+        </div>
+      </section>
+      <section>
+        <div className="bg-white h-screen">
+
         </div>
       </section>
     </>
