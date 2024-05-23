@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
-
+import Grid from './nike asssets/grid.svg'
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -141,13 +141,13 @@ function NikeHOME() {
             <div className="absolute -bottom-8 -right-80 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-4000"></div>{/* animate-blob animation-delay-4000 */}
             <div className="absolute -bottom-8 -left-80 sm:-left-60 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-2000"></div>{/* animate-blob animation-delay-4000 */}
           </div>
-        <div className="absolute bg-[url('/images/nike-mds-speed-8.jpg')] bg-center bg-cover size-5/6 rounded-xl"></div>
-        <h1 className="text-white z-10 text-5xl">NIKE MERCURIAL DREAM SPEED 9</h1>
+          <div className="absolute bg-[url('/images/nike-mds-speed-8.jpg')] bg-center bg-cover size-5/6 rounded-xl shadow-xl"></div>
+          <h1 className="text-white z-10 text-5xl">NIKE MERCURIAL DREAM SPEED 9</h1>
         </div>
       </section>
       <section>
-        <div className="bg-white h-screen">
-
+        <div className="relative bg-white bg-cover h-screen overflow-hidden">
+          <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </section>
     </>
