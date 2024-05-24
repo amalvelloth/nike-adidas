@@ -18,7 +18,7 @@ function NikeHOME() {
     <>
       {/* Navbar */}
       {/* Navbar */}
-      <nav className="bg-white w-full fixed shadow-lg z-10">
+      <nav className="bg-white w-full fixed shadow-lg z-20">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <div>
@@ -145,9 +145,18 @@ function NikeHOME() {
           <h1 className="text-white z-10 text-5xl">NIKE MERCURIAL DREAM SPEED 9</h1>
         </div>
       </section>
+
       <section>
         <div className="relative bg-white bg-cover h-screen overflow-hidden">
-          <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover"/>
+          <div className="absolute inset-0 flex flex-col justify-center items-start text-center sm:left-2 md:left-4 left-10 space-y-7">
+            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer">MERCURIAL</h1>
+            <div class="h-0.5 w-1/2 bg-black"></div>
+            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer">PHANTOM</h1>
+            <div class="h-0.5 w-1/2 bg-black"></div>
+            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer">TIEMPO</h1>
+            <div class="h-0.5 w-1/2 bg-black"></div>
+          </div>
         </div>
       </section>
     </>
