@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import adidas from '../adidas/adidas.svg'
 
 function AdidasHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,11 +15,11 @@ function AdidasHOME() {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white w-full">
+      <nav className="bg-white w-full fixed">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
           {/* Logo */}
           <div>
-            <h2 className="text-black font-semibold text-xl">Adidas</h2>
+            <img src={adidas} className='' alt="" />
           </div>
 
           {/* Desktop Menu */}
