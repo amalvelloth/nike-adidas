@@ -15,7 +15,7 @@ function AdidasHOME() {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white w-full fixed">
+      <nav className="bg-white w-full fixed border-b border-black">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
           {/* Logo */}
           <div>
@@ -57,8 +57,8 @@ function AdidasHOME() {
       )}
 
       {/* Content */}
-      <div className='flex h-screen justify-center items-center bg-black'>
-        <h1 className='text-white'>ADIDAS HOME PAGE</h1>
+      <div className='flex h-screen justify-center items-center bg-white'>
+        <h1 className='text-black'>ADIDAS HOME PAGE</h1>
       </div>
     </>
   );
