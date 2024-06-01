@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import adidas from '../adidas/adidas.svg'
+import adidasimg1 from '../adidas/adidas assets/adidas-speedportal-img1.jpg'
+import adidasimg2 from '../adidas/adidas assets/adidas-speedportal-img2.jpg'
 
 function AdidasHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,7 +17,7 @@ function AdidasHOME() {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white w-full fixed border-b border-black">
+      <nav className="bg-white w-full fixed border-b border-black z-20">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
           {/* Logo */}
           <div>
@@ -57,8 +59,16 @@ function AdidasHOME() {
       )}
 
       {/* Content */}
-      <div className='flex h-screen justify-center items-center bg-white'>
-        <h1 className='text-black'>ADIDAS HOME PAGE</h1>
+      <div className="flex h-screen w-screen items-center bg-white">
+        <div className="w-full h-full flex flex-row items-center justify-center">
+          <div className="flex relative w-full h-full">
+            <img src={adidasimg1} alt="Adidas 1" className="w-full h-auto" />
+            <img src={adidasimg2} alt="Adidas 2" className="w-full h-auto" />
+          </div>
+          <div className="flex w-full flex-col space-y-4 ml-4">
+            <h1 className="font-bold text-4xl">ADIDAS X SPEEDPORTAL</h1>
+          </div>
+        </div>
       </div>
     </>
   );
