@@ -17,7 +17,7 @@ function AdidasHOME() {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white w-full fixed border-b border-black z-20">
+      <nav className="bg-white w-full fixed border-b border-black z-30">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
           {/* Logo */}
           <div>
@@ -59,17 +59,28 @@ function AdidasHOME() {
       )}
 
       {/* Content */}
-      <div className="flex h-screen w-screen items-center bg-white">
-        <div className="w-full h-full flex flex-row items-center justify-center">
-          <div className="flex relative w-full h-full">
-            <img src={adidasimg1} alt="Adidas 1" className="w-full h-auto" />
-            <img src={adidasimg2} alt="Adidas 2" className="w-full h-auto" />
-          </div>
-          <div className="flex w-full flex-col space-y-4 ml-4">
-            <h1 className="font-bold text-4xl">ADIDAS X SPEEDPORTAL</h1>
+      <section>
+        <div className="flex h-screen sm:h-full w-screen pt-16 items-center" style={{ backgroundColor: '#fefde5' }}>
+          <div className="w-full h-full flex flex-row sm:flex-col items-center justify-center">
+            <div className="flex sm:flex-col relative w-3/4 h-3/4 p-4 justify-center">
+              <img src={adidasimg1} alt="Adidas 1" className="w-auto h-auto object-contain p-2 bg-black" />
+              <img src={adidasimg2} alt="Adidas 2" className="w-auto h-auto object-contain p-2 bg-black" />
+            </div>
+            <div className="flex w-1/2 h-full items-start justify-center flex-col z-20 p-4">
+              <h1 className="font-bold text-4xl bg-white py-2 sm:fixed sm:top-36 sm:right-0 sm:text-center">
+                ADIDAS X SPEEDPORTAL
+              </h1>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section>
+        <div>
+          
+        </div>
+      </section>
+
+
     </>
   );
 }
