@@ -11,6 +11,12 @@ export default {
         'Monsterrat': ["Montserrat"],
       },
 
+      writingMode: {
+        'horizontal': 'horizontal',
+        'vertical-rl': 'vertical-rl',
+        'vertical-lr': 'vertical-lr',
+      },
+
       spacing: {
         '1/2vw': '0.5vw',
         '1/3vw': '0.33333vw',
