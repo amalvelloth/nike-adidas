@@ -20,7 +20,6 @@ export default {
       spacing: {
         '1/2vw': '0.5vw',
         '1/3vw': '0.33333vw',
-        // Add other viewport unit sizes as needed
       },
       keyframes: {
         blob: {
@@ -52,5 +51,13 @@ export default {
 
     }
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.writing-mode-horizontal': { 'writing-mode': 'horizontal-tb' },
+        '.writing-mode-vertical-rl': { 'writing-mode': 'vertical-rl' },
+        '.writing-mode-vertical-lr': { 'writing-mode': 'vertical-lr' },
+      })
+    }
+  ],
 }
