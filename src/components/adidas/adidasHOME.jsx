@@ -66,12 +66,11 @@ function AdidasHOME() {
               <img src={adidasimg1} alt="Adidas 1" className="w-auto h-auto object-contain p-2 bg-black" />
               <img src={adidasimg2} alt="Adidas 2" className="w-auto h-auto object-contain p-2 bg-black" />
               <div className="flex w-1/2 sm:w-full h-full items-start justify-center flex-col z-20 p-4">
-                <h1 className="font-bold text-xl  bg-white py-2 sm:fixed sm:top-56 sm:text-center">
+                <h1 className="font-bold text-xl  bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-9 sm:writing-mode-vertical-rl">
                   ADIDAS X SPEEDPORTAL
                 </h1>
               </div>
             </div>
-            <h1 className='writing-mode-vertical-rl'>hellpo</h1>
           </div>
         </div>
       </section>
