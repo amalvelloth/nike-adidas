@@ -18,7 +18,7 @@ function AdidasHOME() {
     <>
       {/* Navbar */}
       <nav className="bg-white w-full fixed border-b border-black z-30">
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center py-4">
+        <div className="max-w-7xl mx-auto px-4 pt-5 pb-1 flex justify-between items-center">
           {/* Logo */}
           <div>
             <img src={adidas} className='' alt="" />
@@ -79,9 +79,6 @@ function AdidasHOME() {
 
         </div>
       </section>
-
-
-
 
     </>
   );
