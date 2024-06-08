@@ -26,10 +26,10 @@ function AdidasHOME() {
 
           {/* Desktop Menu */}
           <div className="md:hidden space-x-4 relative top-1">
-            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition">Home</a>
-            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition">Products</a>
-            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition">About</a>
-            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition">Contact</a>
+            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Home</a>
+            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Products</a>
+            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">About</a>
+            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Contact</a>
           </div>
 
           {/* Mobile Menu Button - only shown on small screens */}
@@ -44,22 +44,22 @@ function AdidasHOME() {
       </nav>
 
       {/* Mobile Menu - only shown when isMobileMenuOpen is true */}
-      {isMobileMenuOpen && (
-        <div className="hidden md:flex fixed inset-0 bg-gray-900 bg-opacity-75 z-50" onClick={closeMobileMenu}>
-          <div className="absolute top-0 right-0 bottom-0 bg-white w-full h-full shadow-lg flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <div className="px-4 py-6 text-center">
-              <button onClick={closeMobileMenu} className="text-base absolute top-8 right-8 font-semibold text-red-400">
-                Close
-              </button>
-              <a href="#" className="block text-2xl text-gray-900 hover:text-gray-800 mb-4">Home</a>
-              <a href="#" className="block text-2xl text-gray-900 hover:text-gray-800 mb-4">Products</a>
-              <a href="#" className="block text-2xl text-gray-900 hover:text-gray-800 mb-4">About</a>
-              <a href="#" className="block text-2xl text-gray-900 hover:text-gray-800 mb-4">Contact</a>
-            </div>
+      <div
+        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        onClick={closeMobileMenu}>
+        <div className="absolute top-0 right-0 bottom-0 bg-black w-full h-full shadow-lg flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+          <div className="px-4 py-6 text-center">
+            <button onClick={closeMobileMenu} className="text-base absolute top-7 right-5 font-semibold text-red-400">
+              Close
+            </button>
+            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">Home</a>
+            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">Products</a>
+            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">About</a>
+            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">Contact</a>
           </div>
-
         </div>
-      )}
+      </div>
+
 
       {/* Content */}
       <section>

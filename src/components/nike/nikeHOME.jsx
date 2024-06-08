@@ -134,7 +134,7 @@ function NikeHOME() {
 
       {/* Content */}
       <section>
-        <div className="bg-white overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+        <div className="bg-white overflow-hidden min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 pt-11">
           <div className="relative w-full max-w-lg ">
             <div className="absolute top-0 sm:top-5 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-1000"></div>{/* animate-blob */}
             <div className="absolute top-10 sm:top-4 -right-96 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-4000"></div>{/* animate-blob animation-delay-2000 */}
