@@ -38,7 +38,7 @@ function AdidasHOME() {
 
           {/* Mobile Menu Button - only shown on small screens */}
           <div className="hidden md:flex">
-            <button onClick={toggleMobileMenu} className="text-gray-400 focus:outline-none">
+            <button onClick={toggleMobileMenu} className="text-black focus:outline-none">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
@@ -55,29 +55,29 @@ function AdidasHOME() {
         }}
         onClick={closeMobileMenu}
       >
-        <div className="absolute top-0 right-0 bottom-0 bg-black w-full h-full shadow-lg flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-          <div className="px-4 py-6 text-center">
-            {/* Close button */}
-            <button onClick={closeMobileMenu} className="text-base absolute top-7 right-5 font-semibold text-red-400">
-              Close
-            </button>
-            {/* SVG image */}
+        <div className="absolute flex-col top-0 right-0 bottom-0 bg-black w-full h-full shadow-lg flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+          <div className="flex justify-between items-center w-full px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
               xmlnsXlink="http://www.w3.org/1999/xlink"
-              width="512"
-              height="512"
+              width="40"
+              height="40"
               viewBox="0 0 512 512"
               style={{ enableBackground: 'new 0 0 512 512' }}
               xmlSpace="preserve"
-              className="absolute top-5 left-4 size-11 text-white"
+              className="absolute size-11 top-5 left-4 text-white"
             >
               <g>
                 <path d="m428.384 263.232-92.448-153.76-38.08 22.912-60.48 36.352 60.48 100.704 79.84 133.088H512zM297.856 347.744l-80.544-134.016-95.424 57.44-3.264 1.92 3.264 5.408 74.528 124.032h134.208zM121.888 356.704l-23.232-38.592L0 377.376l15.072 25.152h134.304z" fill="white" opacity="1" data-original="#000000" className=""></path>
               </g>
             </svg>
+            <button onClick={closeMobileMenu} className="absolute top-7 right-5 text-base font-semibold text-red-400">
+              Close
+            </button>
 
+          </div>
+          <div className="px-4 py-6 text-center">
             {/* Navigation links */}
             <a
               href="#"
