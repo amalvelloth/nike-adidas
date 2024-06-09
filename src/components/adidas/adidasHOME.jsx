@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import adidas from '../adidas/adidas.svg'
 import adidasimg1 from '../adidas/adidas assets/adidas-speedportal-img1.jpg'
 import adidasimg2 from '../adidas/adidas assets/adidas-speedportal-img2.jpg'
 
+
 function AdidasHOME() {
+
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -45,20 +49,59 @@ function AdidasHOME() {
 
       {/* Mobile Menu - only shown when isMobileMenuOpen is true */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
-        onClick={closeMobileMenu}>
+        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 delay-100'}`}
+        style={{
+          pointerEvents: isMobileMenuOpen ? 'auto' : 'none',
+        }}
+        onClick={closeMobileMenu}
+      >
         <div className="absolute top-0 right-0 bottom-0 bg-black w-full h-full shadow-lg flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
           <div className="px-4 py-6 text-center">
+            {/* Close button */}
             <button onClick={closeMobileMenu} className="text-base absolute top-7 right-5 font-semibold text-red-400">
               Close
             </button>
-            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">Home</a>
-            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">Products</a>
-            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">About</a>
-            <a href="#" className="block text-2xl text-white hover:text-gray-400 mb-4">Contact</a>
+            {/* SVG image */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              width="512"
+              height="512"
+              viewBox="0 0 512 512"
+              style={{ enableBackground: 'new 0 0 512 512' }}
+              xmlSpace="preserve"
+              className="absolute top-5 left-4 size-11 text-white"
+            >
+              <g>
+                <path d="m428.384 263.232-92.448-153.76-38.08 22.912-60.48 36.352 60.48 100.704 79.84 133.088H512zM297.856 347.744l-80.544-134.016-95.424 57.44-3.264 1.92 3.264 5.408 74.528 124.032h134.208zM121.888 356.704l-23.232-38.592L0 377.376l15.072 25.152h134.304z" fill="white" opacity="1" data-original="#000000" className=""></path>
+              </g>
+            </svg>
+
+            {/* Navigation links */}
+            <a
+              href="#"
+              className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+            >
+              Home
+            </a>
+            <a
+              href="#"
+              className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+            >
+              Products
+            </a>
+            <a
+              href="#"
+              className={`block text-3xl text-white hover:text-gray-400 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+            >
+              About
+            </a>
           </div>
         </div>
       </div>
+
+
 
 
       {/* Content */}

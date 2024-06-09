@@ -10,13 +10,11 @@ export default {
         'Marcellus': ["Marcellus"],
         'Monsterrat': ["Montserrat"],
       },
-
       writingMode: {
         'horizontal': 'horizontal',
         'vertical-rl': 'vertical-rl',
         'vertical-lr': 'vertical-lr',
       },
-
       spacing: {
         '1/2vw': '0.5vw',
         '1/3vw': '0.33333vw',
@@ -33,11 +31,11 @@ export default {
             transform: "translate(-20px, 20px) scale(0.3)",
           },
           "100%": {
-            transform: "tranlate(0px, 0px) scale(1)",
+            transform: "translate(0px, 0px) scale(1)",
           },
         },
+        
       },
-
       animation: {
         blob: "blob 7s infinite",
       },
@@ -48,7 +46,6 @@ export default {
       'md': {'max': '767px'},
       'sm': {'max': '550px'},
       'xsm': {'max': '375px'},
-
     }
   },
   plugins: [
