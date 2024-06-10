@@ -17,6 +17,7 @@ function AdidasHOME() {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+  
 
   return (
     <>
