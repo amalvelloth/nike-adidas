@@ -82,19 +82,19 @@ function AdidasHOME() {
             {/* Navigation links */}
             <a
               href="#"
-              className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+              className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
             >
               Home
             </a>
             <a
               href="#"
-              className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+              className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
             >
               Products
             </a>
             <a
               href="#"
-              className={`block text-3xl text-white hover:text-gray-400 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+              className={`block text-3xl text-white hover:text-gray-400 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
             >
               About
             </a>
@@ -113,7 +113,7 @@ function AdidasHOME() {
               <img src={adidasimg1} alt="Adidas 1" className="w-auto h-auto object-contain p-2 bg-black" />
               <img src={adidasimg2} alt="Adidas 2" className="w-auto h-auto object-contain p-2 bg-black" />
               <div className="flex w-1/2 sm:w-full h-full items-start justify-center flex-col z-20 p-4">
-                <h1 className="font-bold text-xl  bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-9 sm:writing-mode-vertical-rl">
+                <h1 className="font-bold font-Fira-sans italic  text-2xl  bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-10 sm:writing-mode-vertical-rl">
                   ADIDAS X SPEEDPORTAL
                 </h1>
               </div>

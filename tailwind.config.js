@@ -9,7 +9,13 @@ export default {
       fontFamily: {
         'Marcellus': ["Marcellus"],
         'Monsterrat': ["Montserrat"],
+        'Fira-sans' : ["Fira Sans", "sans-serif"],
+        'Roboto-condensed-sans' : ["Roboto Condensed", "sans-serif"],
+        'Open-sans' : ["Open Sans", "sans-serif"]
       },
+      
+
+
       writingMode: {
         'horizontal': 'horizontal',
         'vertical-rl': 'vertical-rl',
