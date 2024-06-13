@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import adidas from '../adidas/adidas.svg'
-import adidasimg1 from '../adidas/adidas assets/adidas-speedportal-img1.jpg'
-import adidasimg2 from '../adidas/adidas assets/adidas-speedportal-img2.jpg'
-
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import adidas from '../adidas/adidas.svg';
+import adidasimg1 from '../adidas/adidas assets/adidas-speedportal-img1.jpg';
+import adidasimg2 from '../adidas/adidas assets/adidas-speedportal-img2.jpg';
 
 function AdidasHOME() {
-
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,7 +14,6 @@ function AdidasHOME() {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
-  
 
   return (
     <>
@@ -31,8 +27,8 @@ function AdidasHOME() {
 
           {/* Desktop Menu */}
           <div className="md:hidden space-x-4 relative top-1">
-            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Home</a>
-            <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Products</a>
+            <Link to="/" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Home</Link>
+            <Link to="/products" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Products</Link>
             <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">About</a>
             <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Contact</a>
           </div>
@@ -76,22 +72,21 @@ function AdidasHOME() {
             <button onClick={closeMobileMenu} className="absolute top-7 right-5 text-base font-semibold text-red-400">
               Close
             </button>
-
           </div>
           <div className="px-4 py-6 text-center">
             {/* Navigation links */}
-            <a
-              href="#"
+            <Link
+              to="/adidas-home"
               className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/products"
               className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
             >
               Products
-            </a>
+            </Link>
             <a
               href="#"
               className={`block text-3xl text-white hover:text-gray-400 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
@@ -101,9 +96,6 @@ function AdidasHOME() {
           </div>
         </div>
       </div>
-
-
-
 
       {/* Content */}
       <section>
@@ -123,10 +115,8 @@ function AdidasHOME() {
       </section>
       <section>
         <div className='w-full h-screen bg-white'>
-
         </div>
       </section>
-
     </>
   );
 }

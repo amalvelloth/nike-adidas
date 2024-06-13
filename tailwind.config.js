@@ -11,7 +11,8 @@ export default {
         'Monsterrat': ["Montserrat"],
         'Fira-sans' : ["Fira Sans", "sans-serif"],
         'Roboto-condensed-sans' : ["Roboto Condensed", "sans-serif"],
-        'Open-sans' : ["Open Sans", "sans-serif"]
+        'Open-sans' : ["Open Sans", "sans-serif"],
+        'Oswald' : ["Oswald", "sans-serif"]
       },
       
 
