@@ -27,7 +27,7 @@ function AdidasHOME() {
 
           {/* Desktop Menu */}
           <div className="md:hidden space-x-4 relative top-1">
-            <Link to="/" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Home</Link>
+            <Link to="/adidas-home" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Home</Link>
             <Link to="/products" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Products</Link>
             <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">About</a>
             <a href="#" className="text-black hover:text-white hover:bg-black rounded-full px-5 pt-3 pb-1 transition duration-300">Contact</a>
@@ -105,7 +105,7 @@ function AdidasHOME() {
               <img src={adidasimg1} alt="Adidas 1" className="w-auto h-auto object-contain p-2 bg-black" />
               <img src={adidasimg2} alt="Adidas 2" className="w-auto h-auto object-contain p-2 bg-black" />
               <div className="flex w-1/2 sm:w-full h-full items-start justify-center flex-col z-20 p-4">
-                <h1 className="font-bold font-Fira-sans italic  text-2xl bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-10 sm:writing-mode-vertical-rl">
+                <h1 className="font-bold font-Fira-sans italic sm:text-2xl md:text-3xl lg:text-4xl text-5xl bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-10 sm:writing-mode-vertical-rl">
                   ADIDAS X SPEEDPORTAL
                 </h1>
               </div>

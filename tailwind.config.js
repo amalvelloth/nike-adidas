@@ -53,6 +53,9 @@ export default {
       'md': {'max': '767px'},
       'sm': {'max': '550px'},
       'xsm': {'max': '375px'},
+      'sm-md': '640px', // custom sm-md breakpoint
+      'md-lg': '1024px', // custom md-lg breakpoint
+      'lg-xl': '1280px', // custom lg-xl breakpoint
     }
   },
   plugins: [
