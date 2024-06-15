@@ -108,6 +108,7 @@ function AdidasHOME() {
                 <h1 className="font-bold font-Fira-sans italic sm:text-2xl md:text-3xl lg:text-4xl text-5xl bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-10 sm:writing-mode-vertical-rl">
                   ADIDAS X SPEEDPORTAL
                 </h1>
+                <h1 className='p-0'>Explore More</h1>
               </div>
             </div>
           </div>
