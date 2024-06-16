@@ -1,10 +1,86 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { MotionConfig, motion } from 'framer-motion';
 import adidas from '../adidas/adidas.svg';
 import adidasimg1 from '../adidas/adidas assets/adidas-speedportal-img1.jpg';
 import adidasimg2 from '../adidas/adidas assets/adidas-speedportal-img2.jpg';
 
-function AdidasHOME() {
+const AnimatedHamburgerButton = ({ onClick, isOpen }) => {
+  
+  return (
+    <MotionConfig
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+      }}
+    >
+      <motion.button
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        onClick={onClick}
+        className={`fixed top-4 right-4 h-12 w-12 rounded-full z-50 transition-colors ${
+          isOpen ? 'bg-red-400' : 'bg-white'
+        }`}
+      >
+        <motion.span
+          variants={VARIANTS.top}
+          className="absolute h-1 w-10 bg-black"
+          style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
+        />
+        <motion.span
+          variants={VARIANTS.middle}
+          className="absolute h-1 w-10 bg-black"
+          style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+        />
+        <motion.span
+          variants={VARIANTS.bottom}
+          className="absolute h-1 w-5 bg-black"
+          style={{
+            x: "-50%",
+            y: "50%",
+            bottom: "35%",
+            left: "calc(50% + 10px)",
+          }}
+        />
+      </motion.button>
+    </MotionConfig>
+  );
+};
+
+const VARIANTS = {
+  top: {
+    open: {
+      rotate: ["0deg", "0deg", "45deg"],
+      top: ["35%", "50%", "50%"],
+    },
+    closed: {
+      rotate: ["45deg", "0deg", "0deg"],
+      top: ["50%", "50%", "35%"],
+    },
+  },
+  middle: {
+    open: {
+      rotate: ["0deg", "0deg", "-45deg"],
+    },
+    closed: {
+      rotate: ["-45deg", "0deg", "0deg"],
+    },
+  },
+  bottom: {
+    open: {
+      rotate: ["0deg", "0deg", "45deg"],
+      bottom: ["35%", "50%", "50%"],
+      left: "50%",
+    },
+    closed: {
+      rotate: ["45deg", "0deg", "0deg"],
+      bottom: ["50%", "50%", "35%"],
+      left: "calc(50% + 10px)",
+    },
+  },
+};
+
+const AdidasHOME = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -22,7 +98,7 @@ function AdidasHOME() {
         <div className="max-w-7xl mx-auto px-4 pt-5 pb-1 flex justify-between items-center">
           {/* Logo */}
           <div>
-            <img src={adidas} className='' alt="" />
+            <img src={adidas} alt="Adidas Logo" />
           </div>
 
           {/* Desktop Menu */}
@@ -35,18 +111,14 @@ function AdidasHOME() {
 
           {/* Mobile Menu Button - only shown on small screens */}
           <div className="hidden md:flex">
-            <button onClick={toggleMobileMenu} className="text-black focus:outline-none">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
+            <AnimatedHamburgerButton onClick={toggleMobileMenu} isOpen={isMobileMenuOpen} />
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu - only shown when isMobileMenuOpen is true */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 delay-100'}`}
+        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         style={{
           pointerEvents: isMobileMenuOpen ? 'auto' : 'none',
         }}
@@ -69,21 +141,21 @@ function AdidasHOME() {
                 <path d="m428.384 263.232-92.448-153.76-38.08 22.912-60.48 36.352 60.48 100.704 79.84 133.088H512zM297.856 347.744l-80.544-134.016-95.424 57.44-3.264 1.92 3.264 5.408 74.528 124.032h134.208zM121.888 356.704l-23.232-38.592L0 377.376l15.072 25.152h134.304z" fill="white" opacity="1" data-original="#000000" className=""></path>
               </g>
             </svg>
-            <button onClick={closeMobileMenu} className="absolute top-7 right-5 text-base font-semibold text-red-400">
-              Close
-            </button>
+            <AnimatedHamburgerButton onClick={closeMobileMenu} className="absolute top-7 right-5 z-100 text-base font-semibold text-white" isOpen={isMobileMenuOpen} />
           </div>
           <div className="px-4 py-6 text-center">
             {/* Navigation links */}
             <Link
               to="/adidas-home"
               className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+              onClick={closeMobileMenu}
             >
               Home
             </Link>
             <Link
               to="/products"
               className={`block text-3xl text-white hover:text-gray-400 mb-4 transition-all duration-500 font-Roboto-condensed-sans font-medium ${isMobileMenuOpen ? 'opacity-100 transform -translate-y-4' : 'opacity-0 transform translate-y-4'}`}
+              onClick={closeMobileMenu}
             >
               Products
             </Link>
@@ -105,7 +177,7 @@ function AdidasHOME() {
               <img src={adidasimg1} alt="Adidas 1" className="w-auto h-auto object-contain p-2 bg-black" />
               <img src={adidasimg2} alt="Adidas 2" className="w-auto h-auto object-contain p-2 bg-black" />
               <div className="flex w-1/2 sm:w-full h-full items-start justify-center flex-col z-20 p-4">
-                <h1 className="font-bold font-Fira-sans italic sm:text-2xl md:text-3xl lg:text-4xl text-5xl bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-10 sm:writing-mode-vertical-rl">
+                <h1 className="font-bold italic text-5xl sm:text-2xl md:text-3xl lg:text-4xl bg-white py-2 sm:fixed sm:top-56 sm:text-center sm:-ml-10 sm:writing-mode-vertical-rl">
                   ADIDAS X SPEEDPORTAL
                 </h1>
                 <h1 className='p-0'>Explore More</h1>
@@ -120,6 +192,6 @@ function AdidasHOME() {
       </section>
     </>
   );
-}
+};
 
 export default AdidasHOME;
