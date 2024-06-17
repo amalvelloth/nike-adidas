@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import Grid from './nike asssets/grid.svg'
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -86,9 +86,9 @@ function NikeHOME() {
             className="absolute top-0 right-0 bottom-0 bg-white w-64 shadow-lg"
             variants={slideInVariants}
             initial="hidden"
-            animate="visible"
-            exit="hidden"
-            onClick={(e) => e.stopPropagation()}
+            animate={isMobileMenuOpen ? "visible" : "hidden"}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            onClick={closeMobileMenu}
           >
             <button
               onClick={closeMobileMenu}
@@ -97,6 +97,7 @@ function NikeHOME() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
+
             </button>
             <div className="px-4 py-6 flex-col items-center">
               <a
