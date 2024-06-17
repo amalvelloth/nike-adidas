@@ -5,8 +5,10 @@ import adidas from '../adidas/adidas.svg';
 import adidasimg1 from '../adidas/adidas assets/adidas-speedportal-img1.jpg';
 import adidasimg2 from '../adidas/adidas assets/adidas-speedportal-img2.jpg';
 
+
 const AnimatedHamburgerButton = ({ onClick, isOpen }) => {
-  
+  const spanColor = isOpen ? 'bg-white' : 'bg-black'; // Change color based on isOpen
+
   return (
     <MotionConfig
       transition={{
@@ -18,25 +20,23 @@ const AnimatedHamburgerButton = ({ onClick, isOpen }) => {
         initial={false}
         animate={isOpen ? "open" : "closed"}
         onClick={onClick}
-        className={`fixed top-4 right-4 h-12 w-12 rounded-full z-50 transition-colors ${
-          isOpen ? 'bg-red-400' : 'bg-white'
-        }`}
+        className="fixed top-5 right-4 h-12 w-12 rounded-full z-50 transition-colors"
       >
         <motion.span
           variants={VARIANTS.top}
-          className="absolute h-1 w-10 bg-black"
+          className={`absolute h-1 w-8 ${spanColor}`}
           style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
         />
         <motion.span
           variants={VARIANTS.middle}
-          className="absolute h-1 w-10 bg-black"
+          className={`absolute h-1 w-8 ${spanColor}`}
           style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
         />
         <motion.span
           variants={VARIANTS.bottom}
-          className="absolute h-1 w-5 bg-black"
+          className={`absolute h-1 w-8 ${spanColor}`}
           style={{
-            x: "-50%",
+            x: "-81%",
             y: "50%",
             bottom: "35%",
             left: "calc(50% + 10px)",
@@ -70,7 +70,7 @@ const VARIANTS = {
     open: {
       rotate: ["0deg", "0deg", "45deg"],
       bottom: ["35%", "50%", "50%"],
-      left: "50%",
+      left: "70%",
     },
     closed: {
       rotate: ["45deg", "0deg", "0deg"],
@@ -118,7 +118,7 @@ const AdidasHOME = () => {
 
       {/* Mobile Menu - only shown when isMobileMenuOpen is true */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+        className={`fixed inset-0 bg-gray-900 bg-opacity-75 z-50 transition-opacity duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 delay-100'}`}
         style={{
           pointerEvents: isMobileMenuOpen ? 'auto' : 'none',
         }}

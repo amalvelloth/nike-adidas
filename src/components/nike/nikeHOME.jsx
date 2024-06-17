@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import Grid from './nike asssets/grid.svg'
+import { motion } from "framer-motion";
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,6 +13,11 @@ function NikeHOME() {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const slideInVariants = {
+    hidden: { x: '100%' },
+    visible: { x: 0 },
   };
 
   return (
@@ -57,19 +63,10 @@ function NikeHOME() {
               onClick={toggleMobileMenu}
               className="text-gray-400 focus:outline-none justify-self-end hidden md:block"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
+
             </button>
           </div>
 
@@ -85,15 +82,21 @@ function NikeHOME() {
           className="hidden md:flex fixed inset-0 bg-gray-900 bg-opacity-75 z-50"
           onClick={closeMobileMenu}
         >
-          <div
-            className="absolute top-0 right-0 bottom-0  bg-white w-64 shadow-lg"
+          <motion.div
+            className="absolute top-0 right-0 bottom-0 bg-white w-64 shadow-lg"
+            variants={slideInVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={closeMobileMenu}
               className="text-gray-900 text-base font-semibold text-red-400 px-4 py-6 mb-4"
             >
-              Close
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
             </button>
             <div className="px-4 py-6 flex-col items-center">
               <a
@@ -128,7 +131,7 @@ function NikeHOME() {
                 <span className="text-black font-medium">Learn more</span>{" "}
               </h1>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
 
@@ -139,8 +142,8 @@ function NikeHOME() {
             <div className="absolute top-0 sm:top-5 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-1000"></div>{/* animate-blob */}
             <div className="absolute top-10 sm:top-4 -right-96 w-80 h-80 bg-yellow-200 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-4000"></div>{/* animate-blob animation-delay-2000 */}
             <div className="absolute -bottom-8 -right-80 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-4000"></div>{/* animate-blob animation-delay-4000 */}
-            <div className="absolute -bottom-8 -left-80 sm:-left-60 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-2000"></div>{/* animate-blob animation-delay-4000 */}         
-            
+            <div className="absolute -bottom-8 -left-80 sm:-left-60 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-2xl     opacity-70 animate-blob animation-delay-2000"></div>{/* animate-blob animation-delay-4000 */}
+
           </div>
           <div className="absolute top-15 right-20 sm:hidden w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>{/* animate-blob animation-delay-4000 */}
           <div className="absolute bg-[url('/images/nike-mds-speed-8.jpg')] bg-center bg-cover size-5/6 rounded-xl shadow-xl"></div>
@@ -150,15 +153,15 @@ function NikeHOME() {
 
       <section>
         <div className="relative bg-white bg-cover h-screen overflow-hidden">
-          <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover"/>
+          <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 flex flex-col justify-center items-start text-center sm:left-2 md:left-4 left-10 space-y-7">
-            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer">MERCURIAL</h1>
+            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer font-Lato">MERCURIAL</h1>
             <div class="h-0.5 w-1/2 bg-black"></div>
-            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer">PHANTOM</h1>
+            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer font-Lato">PHANTOM</h1>
             <div class="h-0.5 w-1/2 bg-black"></div>
-            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer">TIEMPO</h1>
+            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer font-Lato">TIEMPO</h1>
             <div class="h-0.5 w-1/2 bg-black"></div>
-            
+
           </div>
         </div>
       </section>
