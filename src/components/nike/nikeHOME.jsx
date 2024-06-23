@@ -82,6 +82,7 @@ function NikeHOME() {
           className="hidden md:flex fixed inset-0 bg-gray-900 bg-opacity-75 z-50"
           onClick={closeMobileMenu}
         >
+        
           <motion.div
             className="absolute top-0 right-0 bottom-0 bg-white w-64 shadow-lg"
             variants={slideInVariants}
@@ -155,17 +156,31 @@ function NikeHOME() {
       <section>
         <div className="relative bg-white bg-cover h-screen overflow-hidden">
           <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 flex flex-col justify-center items-start text-center sm:left-2 md:left-4 left-10 space-y-7">
-            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer font-Lato">MERCURIAL</h1>
-            <div class="h-0.5 w-1/2 bg-black"></div>
-            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer font-Lato">PHANTOM</h1>
-            <div class="h-0.5 w-1/2 bg-black"></div>
-            <h1 className="text-6xl hover:text-gray-300 transition 5000 ease-in-out cursor-pointer font-Lato">TIEMPO</h1>
-            <div class="h-0.5 w-1/2 bg-black"></div>
+          <div className="absolute inset-10 sm:inset-1 flex flex-row sm:flex-col md:flex-col justify-between items-start text-center">
+            {/* Left side with brand names */}
+            <div className="flex flex-col sm:mt-12 justify-start items-start sm:ml-2 md:ml-4">
+              <h1 className="text-5xl hover:text-gray-300 transition ease-in-out cursor-pointer font-Lato">MERCURIAL</h1>
+              <div className="h-0.5 w-1/2 bg-black"></div>
+              <h1 className="text-5xl hover:text-gray-300 transition ease-in-out cursor-pointer font-Lato">PHANTOM</h1>
+              <div className="h-0.5 w-1/2 bg-black"></div>
+              <h1 className="text-5xl hover:text-gray-300 transition ease-in-out cursor-pointer font-Lato">TIEMPO</h1>
+              <div className="h-0.5 w-1/2 bg-black"></div>
+            </div>
+            
 
+            <motion.div className="flex justify-center items-center px-6 py-10 rounded-md max-w-[453px] h-[200px] bg-black">
+              <h1 className="text-white">Gear up for Greatness</h1>
+            </motion.div>
+
+            {/* Right side for additional content */}
+            <div className="flex flex-col justify-center items-center sm:mr-2 md:mr-4 mr-10">
+              {/* Add any additional content here */}
+              <p className="text-xl">Something here</p>
+            </div>
           </div>
         </div>
       </section>
+
     </>
   );
 }
