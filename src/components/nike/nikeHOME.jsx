@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ShoppingBagTwoToneIcon from '@mui/icons-material/ShoppingBagTwoTone';
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
 import Grid from './nike asssets/grid.svg'
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 
 function NikeHOME() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -82,7 +82,7 @@ function NikeHOME() {
           className="hidden md:flex fixed inset-0 bg-gray-900 bg-opacity-75 z-50"
           onClick={closeMobileMenu}
         >
-        
+
           <motion.div
             className="absolute top-0 right-0 bottom-0 bg-white w-64 shadow-lg"
             variants={slideInVariants}
@@ -156,21 +156,22 @@ function NikeHOME() {
       <section>
         <div className="relative bg-white bg-cover h-screen overflow-hidden">
           <img src={Grid} alt="" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-10 sm:inset-1 flex flex-row sm:flex-col md:flex-col justify-between items-start text-center">
+          <div className="absolute inset-10 sm:inset-1 flex flex-row sm:flex-col md:flex-col justify-between items-start md:items-center text-center">
             {/* Left side with brand names */}
-            <div className="flex flex-col sm:mt-12 justify-start items-start sm:ml-2 md:ml-4">
+            <div className=" flex flex-col sm:mt-12 justify-start items-start">
               <h1 className="text-5xl hover:text-gray-300 transition ease-in-out cursor-pointer font-Lato">MERCURIAL</h1>
               <div className="h-0.5 w-1/2 bg-black"></div>
               <h1 className="text-5xl hover:text-gray-300 transition ease-in-out cursor-pointer font-Lato">PHANTOM</h1>
               <div className="h-0.5 w-1/2 bg-black"></div>
               <h1 className="text-5xl hover:text-gray-300 transition ease-in-out cursor-pointer font-Lato">TIEMPO</h1>
               <div className="h-0.5 w-1/2 bg-black"></div>
-            </div>
-            
 
-            <motion.div className="flex justify-center items-center px-6 py-10 rounded-md max-w-[453px] h-[200px] bg-black">
-              <h1 className="text-white">Gear up for Greatness</h1>
-            </motion.div>
+              <motion.div className="relative flex justify-center items-center shadow-md rounded-t-4xl rounded-b-md my-10 px-4 py-10 w-96 h-80 sm:w-80 sm:h-80 md:w-96 md:h-80 lg:w-96 lg:h-80 xl:w-96 xl:h-80 bg-black">
+                <h1 className="absolute text-white text-2xl font-Monsterrat font-semibold bottom-10"> Gear up for Greatness</h1>
+              </motion.div>
+            </div>
+
+
 
             {/* Right side for additional content */}
             <div className="flex flex-col justify-center items-center sm:mr-2 md:mr-4 mr-10">

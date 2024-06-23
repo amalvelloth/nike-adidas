@@ -16,7 +16,12 @@ export default {
         'Lato' : ["Lato", "sans-serif"]
 
       },
-      
+
+      borderRadius: {
+        't-4xl': '2rem',
+        't-5xl': '2.5rem',
+        't-6xl': '3rem',
+      },
 
 
       writingMode: {
