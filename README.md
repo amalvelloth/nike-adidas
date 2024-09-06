@@ -1,7 +1,7 @@
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-![Uploading screenshot-1725639268457.png…]()
+![image alt](https://github.com/amalvelloth/nike-adidas/blob/main/screenshot-1725639268457.png?raw=true)
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
